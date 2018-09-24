@@ -26,7 +26,7 @@ public abstract class WorldBase {
     public Player player;
 
     protected Handler handler;
-
+    int time = 6000;
     String Score = "Score";
     int counter = 0;
     public Boolean appleOnBoard;
@@ -51,7 +51,7 @@ public abstract class WorldBase {
 
 
     }
-    
+
    
 
     public void render(Graphics g){
@@ -61,7 +61,7 @@ public abstract class WorldBase {
             g.setColor(Color.red);
             g.drawLine(0, i, handler.getWidth() , i);
             g.drawLine(i,0,i,handler.getHeight());
-            g.drawString(Score + counter, 30, 15);
+            g.drawString(Score + counter, 30, 60);
 
         }
 
