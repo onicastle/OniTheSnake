@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import Game.GameStates.State;
 
 /**
@@ -248,6 +251,13 @@ public class Player {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
 
                 handler.getWorld().playerLocation[i][j]=false;
+                JFrame frame = new JFrame("");
+                
+                JOptionPane.showMessageDialog(frame, "GAME OVER");
+                  System.exit(0);
+                 
+
+                
 
             }
         }
