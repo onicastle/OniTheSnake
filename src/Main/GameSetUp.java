@@ -26,7 +26,7 @@ public class GameSetUp implements Runnable {
     private int width, height;
     public String title;
 
-    double ticks = 989989999;
+    double ticks = 989989999; //Aqui cambie el speed
     
     private boolean running = false;
     private Thread thread;
