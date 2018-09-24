@@ -2,9 +2,15 @@ package Game.Entities.Dynamic;
 
 import Main.Handler;
 
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import Game.GameStates.State;
 
 /**
  * Created by AlexVR on 7/2/2018.
@@ -48,7 +54,19 @@ public class Player {
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
             direction="Right";
         }
-
+     
+        ///ADD TAIL 
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)){
+        	 handler.getWorld().body.addFirst(new Tail(xCoord, yCoord,handler));
+        }
+        
+        //PAUSE
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)){
+           State.setState(handler.getGame().pauseState);
+        }
+     
+      
+        
     }
 
     public void checkCollisionAndMove(){
@@ -233,6 +251,13 @@ public class Player {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
 
                 handler.getWorld().playerLocation[i][j]=false;
+                JFrame frame = new JFrame("");
+                
+                JOptionPane.showMessageDialog(frame, "GAME OVER");
+                  System.exit(0);
+                 
+
+                
 
             }
         }
