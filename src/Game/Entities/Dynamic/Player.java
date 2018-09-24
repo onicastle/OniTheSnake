@@ -245,7 +245,8 @@ public class Player {
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
     }
 
-    public void kill(){
+    public void kill(){//Aqui esta el Kill!
+ 
         lenght = 0;
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
