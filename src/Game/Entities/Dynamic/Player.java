@@ -16,7 +16,7 @@ import Game.GameStates.State;
  * Created by AlexVR on 7/2/2018.
  */
 public class Player {
-	public Color N = new Color((int)(Math.random() * 0x1000000));
+
     public int lenght;
     public boolean justAte;
     private Handler handler;
@@ -118,19 +118,11 @@ public class Player {
 
     }
 
-    public Color getN() {
-		return N;
-	}
-
-	public void setN(Color n) {
-		N = n;
-	}
-
-	public void render(Graphics g,Boolean[][] playeLocation){
+    public void render(Graphics g,Boolean[][] playeLocation){
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-            	g.setColor(getN());
+                g.setColor(Color.black);
 
                 if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
                     g.fillRect((i*handler.getWorld().GridPixelsize),
@@ -233,7 +225,7 @@ public class Player {
                             tail=(new Tail(this.xCoord-1,this.yCoord,handler));
                         }else{
                             tail=(new Tail(this.xCoord+1,this.yCoord,handler));
-                        } System.out.println("Tu bizcochito");
+                        } System.out.println("Tu biscochito");
                     }
                 }else{
                     if(handler.getWorld().body.getLast().y!=0){
@@ -253,7 +245,8 @@ public class Player {
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
     }
 
-    public void kill(){
+    public void kill(){//Aqui esta el Kill!
+ 
         lenght = 0;
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
