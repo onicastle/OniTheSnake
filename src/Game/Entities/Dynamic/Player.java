@@ -20,8 +20,16 @@ public class Player {
     public int lenght;
     public boolean justAte;
     private Handler handler;
+    public Color N =new Color((int)(Math.random() * 0x1000000));
+    public Color getN() {
+		return N;
+	}
 
-    public int xCoord;
+	public void setN(Color n) {
+		N = n;
+	}
+
+	public int xCoord;
     public int yCoord;
 
     public int moveCounter;
@@ -137,7 +145,7 @@ public class Player {
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-                g.setColor(Color.WHITE);
+                g.setColor(getN());
 
                 if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
                     g.fillRect((i*handler.getWorld().GridPixelsize),
@@ -260,7 +268,8 @@ public class Player {
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
     }
 
-    public void kill(){
+    public void kill(){//Aqui esta el Kill!
+ 
         lenght = 0;
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {

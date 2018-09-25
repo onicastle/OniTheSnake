@@ -26,6 +26,8 @@ public class GameSetUp implements Runnable {
     private int width, height;
     public String title;
 
+    double ticks = 989989999; //Aqui cambie el speed
+    
     private boolean running = false;
     private Thread thread;
 
@@ -122,12 +124,11 @@ public class GameSetUp implements Runnable {
         init();
 
         int fps = 60;
-        double timePerTick = 1000000000 / fps;
+        double timePerTick = ticks / fps;
         double delta = 0;
         long now;
         long lastTime = System.nanoTime();
         long timer = 0;
-        int ticks = 0;
 
         while(running){
             //makes sure the games runs smoothly at 60 FPS
