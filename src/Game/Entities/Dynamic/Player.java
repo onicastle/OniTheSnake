@@ -159,7 +159,8 @@ public class Player {
 
 
     }
-
+   
+   int score = 1;
     public void Eat(){
         lenght++;
         Tail tail= null;
@@ -266,6 +267,10 @@ public class Player {
         }
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
+        
+        
+        
+        System.out.println(score++);
     }
 
     public void kill(){//Aqui esta el Kill!

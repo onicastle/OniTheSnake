@@ -53,7 +53,7 @@ public abstract class WorldBase {
     }
 
    
-
+////
     public void render(Graphics g){
 
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
