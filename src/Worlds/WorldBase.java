@@ -61,7 +61,6 @@ public abstract class WorldBase {
             g.setColor(Color.red);
             g.drawLine(0, i, handler.getWidth() , i);
             g.drawLine(i,0,i,handler.getHeight());
-           //g.drawString(Score + counter, 30, 15);
 
         }
 
