@@ -110,6 +110,12 @@ public class Player {
                     yCoord++;
                 }
                 break;
+            //case "Snake":
+            //	if(yCoord == handler.getWorld().body) {
+            //		kill();
+            //	}else {
+            		
+            //	}
         }
         handler.getWorld().playerLocation[xCoord][yCoord]=true;
 
