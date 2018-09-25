@@ -38,10 +38,10 @@ public class Player {
         lenght= 1;
 
     }
-
+    int speed = 4;
     public void tick(){
         moveCounter++;
-        if(moveCounter>=5) {
+        if(moveCounter>= speed) {
             checkCollisionAndMove();
             moveCounter=0;
         }
@@ -64,6 +64,18 @@ public class Player {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)){
            State.setState(handler.getGame().pauseState);
         }
+        
+        //speed control
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)){
+    		speed ++;
+    }
+    
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)){
+		speed --;
+		}
+           
+
+        
      
       
         
