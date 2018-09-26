@@ -53,6 +53,7 @@ public class Player {
             checkCollisionAndMove();
             moveCounter=0;
         }
+       
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)){
             if(direction != "Down") {
             	direction = "Up";
@@ -69,6 +70,9 @@ public class Player {
             if(direction != "Left") {
             	direction = "Right";
             }
+           // if(handler.getWorld().playerLocation[xCoord][yCoord]== handler.getWorld().playerLocation[handler.getWorld().playerLocation[handler.getWorld().body.addAll(c)]){
+             	//kill();
+            // }
         }
      
         ///ADD TAIL 
@@ -106,6 +110,11 @@ public class Player {
         handler.getWorld().playerLocation[xCoord][yCoord]=false;
         int x = xCoord;
         int y = yCoord;
+       // for(Tail t : handler.getWorld().body) {
+         //	if(t.x+1 == handler.getWorld() && t.y == y) {
+         	//	kill();
+         //	}
+       //  }
         switch (direction){
             case "Left":
                 if(xCoord==0){
@@ -178,9 +187,10 @@ public class Player {
 
     public void Eat(){
         lenght++;
-        Tail tail= null;
+        Tail tail = null;
         handler.getWorld().appleLocation[xCoord][yCoord]=false;
         handler.getWorld().appleOnBoard=false;
+    
         switch (direction){
             case "Left":
                 if( handler.getWorld().body.isEmpty()){
