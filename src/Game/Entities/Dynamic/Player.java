@@ -110,11 +110,7 @@ public class Player {
         handler.getWorld().playerLocation[xCoord][yCoord]=false;
         int x = xCoord;
         int y = yCoord;
-       // for(Tail t : handler.getWorld().body) {
-         //	if(t.x+1 == handler.getWorld() && t.y == y) {
-         	//	kill();
-         //	}
-       //  }
+       
         switch (direction){
             case "Left":
                 if(xCoord==0){
