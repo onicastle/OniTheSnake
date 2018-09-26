@@ -3,6 +3,8 @@ package Game.Entities.Dynamic;
 import Main.Handler;
 
 
+
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
@@ -11,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import Game.GameStates.State;
+
 
 /**
  * Created by AlexVR on 7/2/2018.
@@ -169,8 +172,18 @@ public class Player {
 
     }
    
-   int score = 1;
-    public void Eat(){
+   public static int  score = 0;
+   
+   
+    public int getScore() {
+	return score;
+}
+
+public void setScore(int score) {
+	Player.score = score;
+}
+
+	public void Eat(){
         lenght++;
         Tail tail= null;
         handler.getWorld().appleLocation[xCoord][yCoord]=false;
@@ -280,9 +293,9 @@ public class Player {
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
         
+        Player.score++;
         
-        
-        System.out.println(score++);
+
     }
 
     public void kill(){//Aqui esta el Kill!

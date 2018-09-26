@@ -15,7 +15,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-
+import Game.Entities.Dynamic.Player;
 
 /**
  * Created by AlexVR on 7/1/2018.
@@ -174,10 +174,18 @@ public class GameSetUp implements Runnable {
         g.clearRect(0, 0, width, height);
 
         //Draw Here!
+       
+        //SCORE
+        
+        g.drawString("SCORE: "+ Player.score, 10, 10);
+        
+        
+      
 
         g.drawImage(loading ,0,0,width,height,null);
         if(State.getState() != null)
             State.getState().render(g);
+        
 
 
         //End Drawing!
