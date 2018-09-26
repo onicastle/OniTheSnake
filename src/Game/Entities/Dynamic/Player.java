@@ -47,20 +47,28 @@ public class Player {
 
     }
     int speed = 4;
-    public void tick(){
+    public void tick(){//Here I implemented BackTracking
         moveCounter++;
         if(moveCounter>= speed) {
             checkCollisionAndMove();
             moveCounter=0;
         }
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP)){
-            direction="Up";
+            if(direction != "Down") {
+            	direction = "Up";
+            }
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_DOWN)){
-            direction="Down";
+            if(direction != "Up") {
+            	direction = "Down";
+            }
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_LEFT)){
-            direction="Left";
+            if(direction != "Right") {
+            	direction = "Left";
+            }
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
-            direction="Right";
+            if(direction != "Left") {
+            	direction = "Right";
+            }
         }
      
         ///ADD TAIL 
@@ -83,6 +91,8 @@ public class Player {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)){
 		speed --;
 		}
+        
+
            
            
 
@@ -217,12 +227,15 @@ public class Player {
                         }else{
                             tail=(new Tail(handler.getWorld().body.getLast().x,this.yCoord+1,handler));
                         }
+                        	
+                        }
                     }
 
-                }
+                
                 break;
             case "Up":
                 if( handler.getWorld().body.isEmpty()){
+                	
                     if(this.yCoord!=handler.getWorld().GridWidthHeightPixelCount-1){
                         tail=(new Tail(this.xCoord,this.yCoord+1,handler));
                     }else{
@@ -254,7 +267,7 @@ public class Player {
                             tail=(new Tail(this.xCoord-1,this.yCoord,handler));
                         }else{
                             tail=(new Tail(this.xCoord+1,this.yCoord,handler));
-                        } System.out.println("Tu biscochito");
+                        }
                     }
                 }else{
                     if(handler.getWorld().body.getLast().y!=0){
