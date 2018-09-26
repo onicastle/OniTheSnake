@@ -125,12 +125,6 @@ public class Player {
                     yCoord++;
                 }
                 break;
-           // case "Snake":
-            //	if(yCoord == handler.getWorld().playerLocation[xCoord][yCoord]) {
-            //		kill();
-            //	}else {
-            		
-            //	}
         }
         handler.getWorld().playerLocation[xCoord][yCoord]=true;
 
@@ -144,7 +138,6 @@ public class Player {
             handler.getWorld().body.removeLast();
             handler.getWorld().body.addFirst(new Tail(x, y,handler));
         }
-
     }
 
     public void render(Graphics g,Boolean[][] playeLocation){

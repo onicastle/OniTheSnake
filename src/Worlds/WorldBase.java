@@ -22,7 +22,7 @@ public abstract class WorldBase {
     //automatically calculated, depends on previous input.
     //The size of each box, the size of each box will be GridPixelsize x GridPixelsize.
     public int GridPixelsize;
-
+    public int score;
     public Player player;
 
     protected Handler handler;
@@ -56,19 +56,18 @@ public abstract class WorldBase {
    
 ////
     public void render(Graphics g){
-
+    	
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
         	
             g.setColor(Color.blue);
 
             g.drawLine(0, i, handler.getWidth() , i);
             g.drawLine(i,0,i,handler.getHeight());
-
+            }
+        
 
         }
 
 
 
     }
-
-}
