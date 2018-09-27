@@ -99,6 +99,13 @@ public class Player {
 		speed --;
 		}
         
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_R)){
+        
+            State.setState(handler.getGame().menuState);
+       	
+       }
+
+        
 
            
            
