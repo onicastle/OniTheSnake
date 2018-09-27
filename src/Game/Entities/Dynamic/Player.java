@@ -155,9 +155,24 @@ public class Player {
             handler.getWorld().playerLocation[handler.getWorld().body.getLast().x][handler.getWorld().body.getLast().y] = false;
             handler.getWorld().body.removeLast();
             handler.getWorld().body.addFirst(new Tail(x, y,handler));
+            
+         
+            
+            
+         // kill when collides with itself 
+            for (int j = 0; j <  handler.getWorld().body.size(); j++) {
+            	Tail T2 = handler.getWorld().body.get(j);
+            	if(this.xCoord == T2.x && this.yCoord == T2.y){
+            		kill();
+            	}
+            }
         }
     }
 
+    
+    
+    
+    
     public void render(Graphics g,Boolean[][] playeLocation){
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
