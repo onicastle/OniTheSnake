@@ -86,7 +86,7 @@ public class GameSetUp implements Runnable {
 
         try {
 
-            audioFile = getClass().getResourceAsStream("/music/nature.wav");
+            audioFile = getClass().getResourceAsStream("/music/smashing.wav");
             audioStream = AudioSystem.getAudioInputStream(audioFile);
             format = audioStream.getFormat();
             info = new DataLine.Info(Clip.class, format);
@@ -127,7 +127,8 @@ public class GameSetUp implements Runnable {
         long now;
         long lastTime = System.nanoTime();
         long timer = 0;
-        int ticks = 0;
+        @SuppressWarnings("unused")
+		int ticks = 0;
 
         while(running){
             //makes sure the games runs smoothly at 60 FPS

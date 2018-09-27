@@ -31,6 +31,8 @@ public abstract class WorldBase {
     String Score = "Score";
     int counter = 0;
     public Boolean appleOnBoard;
+    public Boolean[][] poisonAppleLocation;
+    public Boolean poisonAppleOnBoard;
     protected Apple apple;
     public Boolean[][] appleLocation;
 
@@ -49,12 +51,10 @@ public abstract class WorldBase {
     }
     public void tick(){
 
+	}
 
-
-    }
-
-   
-////
+    
+ 
     public void render(Graphics g){
     	
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
@@ -63,11 +63,9 @@ public abstract class WorldBase {
 
             g.drawLine(0, i, handler.getWidth() , i);
             g.drawLine(i,0,i,handler.getHeight());
-            }
-        
-
         }
-
-
-
     }
+    }
+
+
+
