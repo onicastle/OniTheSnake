@@ -43,7 +43,7 @@ public class DisplayScreen {
         }
 
         canvas = new Canvas();
-        canvas.setPreferredSize(new Dimension(width, height));
+        canvas.setPreferredSize(new Dimension(width-20, height-20));//made the frame fit the 60x60 window perfectly
         canvas.setMaximumSize(new Dimension(width, height));
         canvas.setMinimumSize(new Dimension(width, height));
         canvas.setFocusable(false);

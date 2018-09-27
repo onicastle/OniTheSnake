@@ -3,6 +3,8 @@ package Game.Entities.Dynamic;
 import Main.Handler;
 
 
+
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
@@ -11,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import Game.GameStates.State;
+
 
 /**
  * Created by AlexVR on 7/2/2018.
@@ -152,9 +155,24 @@ public class Player {
             handler.getWorld().playerLocation[handler.getWorld().body.getLast().x][handler.getWorld().body.getLast().y] = false;
             handler.getWorld().body.removeLast();
             handler.getWorld().body.addFirst(new Tail(x, y,handler));
+            
+         
+            
+            
+         // kill when collides with itself 
+            for (int j = 0; j <  handler.getWorld().body.size(); j++) {
+            	Tail T2 = handler.getWorld().body.get(j);
+            	if(this.xCoord == T2.x && this.yCoord == T2.y){
+            		kill();
+            	}
+            }
         }
     }
 
+    
+    
+    
+    
     public void render(Graphics g,Boolean[][] playeLocation){
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
@@ -174,8 +192,18 @@ public class Player {
 
     }
    
-   int score = 1;
-    public void Eat(){
+   public static int  score = 0;
+   
+   
+    public int getScore() {
+	return score;
+}
+
+public void setScore(int score) {
+	Player.score = score;
+}
+
+	public void Eat(){
         lenght++;
         Tail tail = null;
         handler.getWorld().appleLocation[xCoord][yCoord]=false;
@@ -286,9 +314,9 @@ public class Player {
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
         
+        Player.score++;
         
-        
-        System.out.println(score++);
+
     }
 
     public void kill(){//Aqui esta el Kill!
