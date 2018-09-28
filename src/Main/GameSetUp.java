@@ -86,7 +86,7 @@ public class GameSetUp implements Runnable {
 
         try {
 
-            audioFile = getClass().getResourceAsStream("/music/smashing.wav");
+            audioFile = getClass().getResourceAsStream("/music/smashing.wav");//Changed Music
             audioStream = AudioSystem.getAudioInputStream(audioFile);
             format = audioStream.getFormat();
             info = new DataLine.Info(Clip.class, format);
@@ -177,9 +177,7 @@ public class GameSetUp implements Runnable {
         //Draw Here!
        
         //SCORE
-        
         g.drawString("SCORE: "+ Player.score, 10, 10);
-        
         
       
 

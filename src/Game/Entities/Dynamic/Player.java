@@ -73,9 +73,7 @@ public class Player {
             if(direction != "Left") {
             	direction = "Right";
             }
-           // if(handler.getWorld().playerLocation[xCoord][yCoord]== handler.getWorld().playerLocation[handler.getWorld().playerLocation[handler.getWorld().body.addAll(c)]){
-             	//kill();
-            // }
+           
         }
      
         ///ADD TAIL 
@@ -319,7 +317,7 @@ public void setScore(int score) {
 
     }
 
-    public void kill(){//Aqui esta el Kill!
+    public void kill(){ //Aqui esta el Kill!
  
         lenght = 0;
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
