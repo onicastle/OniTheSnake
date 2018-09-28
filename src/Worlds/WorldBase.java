@@ -28,7 +28,6 @@ public abstract class WorldBase {
     protected Handler handler;
 
     int time = 6000; 
-    String Score = "Score";
     int counter = 0;
     public Boolean appleOnBoard;
     public Boolean[][] poisonAppleLocation;
@@ -59,7 +58,7 @@ public abstract class WorldBase {
     	
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
         	
-            g.setColor(Color.blue);
+            //color change grid
 
             g.drawLine(0, i, handler.getWidth() , i);
             g.drawLine(i,0,i,handler.getHeight());

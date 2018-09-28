@@ -23,7 +23,7 @@ public class Player {
     public int lenght;
     public boolean justAte;
     private Handler handler;
-    public Color N =new Color((int)(Math.random() * 0x1000000));
+    public Color N =new Color((int)(Math.random() * 0x1000000)); // these lines of code make the snake change colors everytime
     public Color getN() {
 		return N;
 	}
@@ -119,7 +119,7 @@ public class Player {
         int x = xCoord;
         int y = yCoord;
        
-        switch (direction){
+        switch (direction){//This kills the snake then reaching out of bounds
             case "Left":
                 if(xCoord==0){
                     kill();
@@ -196,7 +196,7 @@ public class Player {
 
 
     }
-   
+   //Here we implemented the score behind the grid.
    public static int  score = 0;
    
    
@@ -315,7 +315,7 @@ public void setScore(int score) {
 
                 }
                 break;
-        }
+        }//posiotion snakes tale
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
         
