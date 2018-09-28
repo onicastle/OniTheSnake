@@ -97,6 +97,8 @@ public class Player {
 		speed --;
 		}
         
+        // Key R to return to the menu 
+        
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_R)){
         
             State.setState(handler.getGame().menuState);
@@ -164,7 +166,7 @@ public class Player {
          
             
             
-         // kill when collides with itself 
+         // Game over when collides with itself 
             for (int j = 0; j <  handler.getWorld().body.size(); j++) {
             	Tail T2 = handler.getWorld().body.get(j);
             	if(this.xCoord == T2.x && this.yCoord == T2.y){
@@ -197,7 +199,7 @@ public class Player {
 
 
     }
-   //Here we implemented the score behind the grid.
+
    public static int  score = 0;
    
    
@@ -320,6 +322,9 @@ public void setScore(int score) {
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
         
+       
+        // Add score 
+        
         Player.score++;
         
 
@@ -332,11 +337,13 @@ public void setScore(int score) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
 
                 handler.getWorld().playerLocation[i][j]=false;
+              
+                
                 JFrame frame = new JFrame("");
                 
                 JOptionPane.showMessageDialog(frame, "GAME OVER");
                   System.exit(0);
-                 
+               /// Game over  when collides with the a wall   
 
                // 
 
