@@ -179,7 +179,8 @@ public class Player {
     
     
     public void render(Graphics g,Boolean[][] playeLocation){
-        Random r = new Random();
+        @SuppressWarnings("unused")
+		Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
                 g.setColor(getN());
@@ -337,7 +338,7 @@ public void setScore(int score) {
                   System.exit(0);
                  
 
-                
+               // 
 
             }
         }
